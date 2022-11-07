@@ -10,7 +10,6 @@
 	export let hideAtTop = false
 	export let showAtBottom = false
 	export let showAtTop = false
-	export let styleClass = ''
 
 	let headerClass = 'pin'
 	let lastHeaderClass = 'pin'
@@ -57,11 +56,10 @@
 		lastHeaderClass = headerClass
 	}
 </script>
-
 <svelte:window bind:scrollY={y} />
 <div
 	use:action
-	class={styleClass + ' ' + headerClass}
+	class={headerClass}
 	class:bottom
 	class:atTop
 	class:atBottom
