@@ -1,5 +1,5 @@
 {
-  "name": "svelte-headroom",
+  "name": "@taocode/svelte-headroom",
   "svelte": "src/index.svelte",
   "module": "index.mjs",
   "main": "index.js",
@@ -23,16 +23,19 @@
     "index.mjs",
     "index.js"
   ],
-  "description": "Svelte component with headroom",
-  "version": "2.3.0",
-  "author": "Thomas Collardeau",
+  "description": "Svelte component with headroom based on collardeau/svelte-headroom with bottom pinning",
+  "version": "3.1.0",
+  "author": "Mark Jones",
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/collardeau/svelte-headroom.git"
+    "url": "git+https://github.com/taocode/svelte-headroom.git"
   },
   "bugs": {
-    "url": "https://github.com/collardeau/svelte-headroom/issues"
+    "url": "https://github.com/taocode/svelte-headroom/issues"
   },
-  "homepage": "https://github.com/collardeau/svelte-headroom#readme"
+  "homepage": "https://github.com/taocode/svelte-headroom#readme"
 }
