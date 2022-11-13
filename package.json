@@ -1,24 +1,30 @@
 {
   "name": "@taocode/svelte-headroom",
-  "version": "3.1.0",
-	"scripts": {
-		"dev": "vite dev",
-		"build": "svelte-kit sync && svelte-package",
-		"prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/kit": "next",
-		"@sveltejs/package": "next",
-		"svelte": "^3.44.0",
-		"svelte-check": "^2.7.1",
-		"tslib": "^2.3.1",
-		"typescript": "^4.7.4",
-		"vite": "^3.1.0"
-	},
-	"type": "module",
+  "version": "0.0.0-development",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "svelte-kit sync && svelte-package",
+    "prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+    "release": "semantic-release",
+    "semantic-release": "semantic-release"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "@sveltejs/package": "1.0.0-next.5",
+    "husky": "^8.0.2",
+    "semantic-release": "^19.0.5",
+    "svelte": "^3.53.1",
+    "svelte-check": "^2.7.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.7.4",
+    "vite": "^3.1.0"
+  },
+  "type": "module",
   "keywords": [
     "svelte",
     "svelte-component",
@@ -37,10 +43,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/taocode/svelte-headroom.git"
+    "url": "https://github.com/taocode/svelte-headroom.git"
   },
   "bugs": {
     "url": "https://github.com/taocode/svelte-headroom/issues"
   },
-  "homepage": "https://github.com/taocode/svelte-headroom#readme"
+  "homepage": "https://github.com/taocode/svelte-headroom#readme",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "subject-case": [
+        2,
+        "never",
+        [
+          "start-case",
+          "pascal-case"
+        ]
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E  HUSKY_GIT_PARAMS"
+    }
+  }
 }
