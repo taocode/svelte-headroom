@@ -1,8 +1,8 @@
-name: Release
+name: Pre-Release
 on:
   push:
     branches:
-      - master
+      - beta
 jobs:
   release:
     name: Release
