@@ -17,7 +17,9 @@ jobs:
         with:
           node-version: 'lts/*'
       - name: Install dependencies
-        run: npm ci && npm run build
+        run: npm i 
+      - name: Build Svelte Package
+        run: npm run build
       - name: Release
         working-directory: package
         env:
