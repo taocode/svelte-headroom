@@ -5,7 +5,7 @@ on:
       - beta
 jobs:
   release:
-    name: Release
+    name: Pre-Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
