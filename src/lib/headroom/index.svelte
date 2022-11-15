@@ -19,11 +19,14 @@
 	let lastY = 0
 	let atTop = true
 	let atBottom = false
-	let win
-	let style = `--duration:${duration};--easing:${easing};`
+	let style = `--duration:${duration}; --easing:${easing};`
 
 	const dispatch = createEventDispatcher()
 
+	/**
+   * @type {Window & typeof globalThis}
+   */
+	let win
 	onMount(() => {
 		win = window
 	})
