@@ -36,9 +36,9 @@
   <p><strong>Hide your header and footer until you need them!</strong></p>
   <p>Svelte Headroom is a <a href="https://svelte.dev" rel="nofollow">Svelte</a> component to hide or show your header on scroll, based on <a href="https://github.com/collardeau/svelte-headroom">collardeau/svelte-headroom</a>, inspired by <a href="https://wicky.nillia.ms/headroom.js/" rel="nofollow">headroom.js</a></p>
   <p><code>@taocode/svelte-headroom</code> has <strong>no dependencies</strong>.</p>
-  <h1>Demo</h1>
-  <p><a href="https://codesandbox.io/embed/svelte-headroom-demo-cf7lv" rel="nofollow">Code Sandbox</a></p>
-  <h1>Install</h1>
+  <h2>Demo</h2>
+  <p><a href="https://svelte.dev/repl/44cafd471bcf497080e12ed3bee80986" rel="nofollow">SVELTE REPL</a></p>
+  <h2>Install</h2>
   <p><code>npm install @taocode/svelte-headroom</code></p>
   <h2>Usage</h2>
   <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto"><pre>
@@ -57,9 +57,15 @@
     <span class="pl-c">&lt;!-- my header --&gt;</span>
   <span class="pl-kos">&lt;/</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span></pre></div>
   <h3><code>tolerance</code> number</h3>
-  <p>The amount of pixels that need to be scrolled in either direction for the effect to occur. This is useful if you want the user to be able to scroll slowly and not change the header position. Default: <code>0</code>.</p>
+  <p>The number of pixels that need to be scrolled in either direction for the effect to occur. This is useful if you want the user to be able to scroll slowly and not change the header position. Default: <code>0</code>.</p>
   <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto"><pre>
   <span class="pl-kos">&lt;</span><span class="pl-ent">Headroom</span> <span class="pl-c1">tolerance</span>=<span class="pl-s">&lbrace;10&rbrace;</span><span class="pl-kos">&gt;</span>
+    <span class="pl-c">&lt;!-- my header --&gt;</span>
+  <span class="pl-kos">&lt;/</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span></pre></div>
+  <h3><code>shim</code> number</h3>
+  <p>The number of pixels from top or bottom to detect top or bottom status. If you're within this value of top or bottom, you'll be considered at top or bottom. Default: <code>2</code>.</p>
+  <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto"><pre>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">Headroom</span> <span class="pl-c1">shim</span>=<span class="pl-s">&lbrace;5&rbrace;</span><span class="pl-kos">&gt;</span>
     <span class="pl-c">&lt;!-- my header --&gt;</span>
   <span class="pl-kos">&lt;/</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span></pre></div>
   <h3><code>duration</code> string</h3>
@@ -69,6 +75,12 @@
     <span class="pl-c">&lt;!-- my header --&gt;</span>
   <span class="pl-kos">&lt;/</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span></pre></div>
   
+  <h3><code>easing</code> string</h3>
+  <p>The easing of the sliding effect. The value is passed on as a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function" rel="nofollow">CSS Transition Timing Function</a>. Default: <code>"linear"</code>.</p>
+  <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto"><pre>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">Headroom</span> <span class="pl-c1">easing</span>='<span class="pl-s">ease-out</span>'<span class="pl-kos">&gt;</span>
+    <span class="pl-c">&lt;!-- my header --&gt;</span>
+  <span class="pl-kos">&lt;/</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span></pre></div>
 
   <h3><code>bottom</code> boolean</h3>
   <p>If this is to be pinned to the bottom, like a return to top button. Default: false.</p>

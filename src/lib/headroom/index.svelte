@@ -69,7 +69,6 @@
 	class:hideAtTop
 	class:showAtBottom
 	class:hideAtBottom
-	
 >
 	<slot />
 </div>
