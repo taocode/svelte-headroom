@@ -2,7 +2,7 @@
 
 **Hide your header and footer until you need it!**
 
-Svelte Headroom is a [Svelte](https://svelte.dev) component to hide or show your header on scroll, adapted from , inspired by [headroom.js](https://wicky.nillia.ms/headroom.js/)
+Svelte Headroom is a [Svelte](https://svelte.dev) component to hide or show your header on scroll, adapted from [collardeau/svelte-headroom](https://github.com/collardeau/svelte-headroom), inspired by [headroom.js](https://wicky.nillia.ms/headroom.js/)
 
 `@taocode/svelte-headroom` has **no dependencies**.
 
