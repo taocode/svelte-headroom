@@ -1,5 +1,5 @@
 <script>
-  import Headroom from '$lib/headroom/index.svelte'
+  import { Headroom } from '$lib'
 
 </script>
 
