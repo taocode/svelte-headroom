@@ -38,9 +38,6 @@
   "description": "Svelte component with headroom based on collardeau/svelte-headroom with bottom pinning",
   "author": "Mark Jones",
   "license": "MIT",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/taocode/svelte-headroom.git"
