@@ -30,6 +30,9 @@
     "svelte-component",
     "headroom.js"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "headroom",
     "index.d.ts",
