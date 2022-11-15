@@ -85,7 +85,7 @@ The timing function (easing) of the sliding effect. The value is passed on as a 
 
 ```html
 
-<Headroom duration='500ms'>
+<Headroom easing='ease-out'>
   <!-- my header -->
 </Headroom>
 
@@ -97,7 +97,7 @@ If this is to be pinned to the bottom, like a return to top button. Default: `fa
 
 ```html
 
-<Headroom duration='500ms'>
+<Headroom bottom>
   <!-- my header -->
 </Headroom>
 
@@ -113,7 +113,7 @@ If this is to be pinned to the bottom, like a return to top button. Default: `fa
   <!-- my header that will always show when at bottom -->
 </Headroom>
 
-<Headroom bottom hideAtTop showAtBottom>
+<Headroom bottom hideAtTop showAtBottom tolerance={20} shim={50}>
   <!-- footer for 'to top' button -->
 </Headroom>
 
