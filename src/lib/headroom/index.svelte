@@ -3,8 +3,10 @@
 	import validate from './validation'
 
 	export let duration = '300ms'
+	export let easing = 'linear'
 	export let offset = 0
 	export let tolerance = 0
+	export let shim = 2
 	export let bottom = false
 	export let hideAtBottom = false
 	export let hideAtTop = false
@@ -18,6 +20,7 @@
 	let atTop = true
 	let atBottom = false
 	let win
+	let style = `--duration:${duration};--easing:${easing};`
 
 	const dispatch = createEventDispatcher()
 
@@ -41,24 +44,20 @@
 		return result
 	}
 
-	function action(node) {
-		node.style.transitionDuration = duration
-	}
-
 	$: {
 		validate({ duration, offset, tolerance })
 		headerClass = updateClass(y)
-		atTop = y <= 2
-		atBottom = win && win.innerHeight + win.pageYOffset >= document.body.offsetHeight - 2
+		atTop = y <= shim
+		atBottom = win && win.innerHeight + win.pageYOffset >= document.body.offsetHeight - shim
 		if (headerClass !== lastHeaderClass) {
-			dispatch(headerClass ? 'unpin' : 'pin')
+			dispatch(headerClass)
 		}
 		lastHeaderClass = headerClass
 	}
 </script>
 <svelte:window bind:scrollY={y} />
 <div
-	use:action
+	{style}
 	class={headerClass}
 	class:bottom
 	class:atTop
@@ -67,6 +66,7 @@
 	class:hideAtTop
 	class:showAtBottom
 	class:hideAtBottom
+	
 >
 	<slot />
 </div>
@@ -76,7 +76,7 @@
 		position: fixed;
 		width: 100%;
 		top: 0;
-		transition: transform 300ms linear;
+		transition: transform var(--duration, 300ms) var(--easing, linear);
 	}
 	.bottom {
 		top: auto;

@@ -1,6 +1,12 @@
 <script>
   import { Headroom } from '$lib'
 
+  function onPin() {
+  console.log('pin')
+  }
+  function onUnPin() {
+    console.log('unpin')
+  }
 </script>
 
 <svelte:head>
@@ -8,7 +14,7 @@
 </svelte:head>
 
 
-<Headroom showAtBottom>
+<Headroom showAtBottom duration="500ms" easing="ease-out" on:unpin={onUnPin} on:pin={onPin}>
   <nav class="menu">
     <ul>
       <li>One</li>
@@ -20,7 +26,7 @@
 </Headroom>
 
 <div class="totop-wrap">
-<Headroom bottom showAtBottom hideAtTop >
+<Headroom bottom showAtBottom hideAtTop>
   <button class="totop" on:click={() => window.scroll(0,0)}> <span class="caret">^</span> <span>To Top</span> </button>
 </Headroom>
 </div>
