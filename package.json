@@ -31,8 +31,8 @@
     "headroom.js"
   ],
   "files": [
-    "src",
-    "index.mjs",
+    "headroom",
+    "index.d.ts",
     "index.js"
   ],
   "description": "Svelte component with headroom based on collardeau/svelte-headroom with bottom pinning",
