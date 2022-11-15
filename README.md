@@ -10,7 +10,7 @@ Svelte Headroom is a [Svelte](https://svelte.dev) component to hide or show your
 
 Demo URL coming soon or check the source.
 
-[Ancestor Code Sandbox](https://codesandbox.io/embed/svelte-headroom-demo-cf7lv)
+[Svelte REPL](https://svelte.dev/repl/44cafd471bcf497080e12ed3bee80986?version=3.53.1)
 
 ## Install
 
@@ -45,7 +45,7 @@ The number of pixels from the top of the page before the effect is allowed to oc
 
 ### `tolerance` number
 
-The amount of pixels that need to be scrolled in either direction for the effect to occur. This is useful if you want the user to be able to scroll slowly and not change the header position. Default: `0`.
+The number of pixels that need to be scrolled in either direction for the effect to occur. This is useful if you want the user to be able to scroll slowly and not change the header position. Default: `0`.
 
 ```html
 
@@ -55,9 +55,33 @@ The amount of pixels that need to be scrolled in either direction for the effect
 
 ```
 
+### `shim` number
+
+The number of pixels from top or bottom to detect top or bottom status. If you're within this value of top or bottom, you'll be considered at top or bottom. Default: `2`.
+
+```html
+
+<Headroom shim={5}>
+  <!-- my header -->
+</Headroom>
+
+```
+
 ### `duration` string
 
 The duration of the sliding effect. The value is passed on as a [CSS Transition Duration](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration). Default: `"300ms"`.
+
+```html
+
+<Headroom duration='500ms'>
+  <!-- my header -->
+</Headroom>
+
+```
+
+### `easing` string
+
+The timing function (easing) of the sliding effect. The value is passed on as a [CSS Transition Timing Function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function). Default: `"linear"`.
 
 ```html
 
