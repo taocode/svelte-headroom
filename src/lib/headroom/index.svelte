@@ -5,8 +5,9 @@
 	export let duration = '300ms'
 	export let easing = 'linear'
 	export let offset = 0
-	export let tolerance = 0
-	export let shim = 2
+	export let toleranceScroll = 0
+	export let toleranceTop = 2
+	export let toleranceBottom = 2
 	export let bottom = false
 	export let hideAtBottom = false
 	export let hideAtTop = false
@@ -20,6 +21,8 @@
 	let atTop = true
 	let atBottom = false
 	let style = `--duration:${duration}; --easing:${easing};`
+	
+	validate({ duration, easing, offset, toleranceScroll, toleranceTop, toleranceBottom })
 
 	const dispatch = createEventDispatcher()
 
@@ -33,7 +36,7 @@
 
 	function deriveClass(y = 0, scrolled = 0) {
 		if (y < offset) return 'pin'
-		if (!scrolled || Math.abs(scrolled) < tolerance) return headerClass
+		if (!scrolled || Math.abs(scrolled) < toleranceScroll) return headerClass
 		const dir = scrolled < 0 ? 'down' : 'up'
 		if (dir === 'up') return 'pin'
 		if (dir === 'down') return 'unpin'
@@ -48,10 +51,9 @@
 	}
 
 	$: {
-		validate({ duration, offset, tolerance })
 		headerClass = updateClass(y)
-		atTop = y <= shim
-		atBottom = win && win.innerHeight + win.pageYOffset >= document.body.offsetHeight - shim
+		atTop = y <= toleranceTop
+		atBottom = win && win.innerHeight + win.pageYOffset >= document.body.offsetHeight - toleranceBottom
 		if (headerClass !== lastHeaderClass) {
 			dispatch(headerClass)
 		}
