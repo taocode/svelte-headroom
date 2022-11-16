@@ -1,7 +1,5 @@
 <script>
-  import {
-    Headroom
-  } from '$lib'
+  import { Headroom } from '$lib'
 
   function onPin() {
     console.log('pin')
@@ -13,7 +11,7 @@
     pinned = false
   }
 
-  const props = ['tolerance','offsetTop','offsetBottom','duration','easing','bottom',['ats','(hide|show)at(Top|Bottom)']]
+  const propsMenu = ['tolerance','offsetTop','offsetBottom','duration','easing','bottom',['ats','(hide|show)at(Top|Bottom)']]
   let pinned = true
 </script>
 
@@ -27,7 +25,7 @@
     <div class="topmenu">
       <div class="label">props:</div>
       <nav class="menu">
-        {#each props as p}
+        {#each propsMenu as p}
         {#if Array.isArray(p)}
           <a href="#{p[0]}">{p[1]}</a>
         {:else}
@@ -40,7 +38,7 @@
 </Headroom>
 
 <div class="totop-wrap">
-  <Headroom bottom showAtBottom hideAtTop tolerance={20} offsetTop={200} offsetBottom={100}>
+  <Headroom bottom showAtBottom hideAtTop tolerance={20} offsetTop={100} offsetBottom={100}>
     <button class="totop" on:click={()=> window.scroll(0,0)}> <span class="caret">^</span> <span>To Top</span> </button>
   </Headroom>
 </div>
@@ -53,7 +51,7 @@
     by <a href="https://wicky.nillia.ms/headroom.js/" rel="nofollow">headroom.js</a></p>
   <p><code>@taocode/svelte-headroom</code> has <strong>no dependencies</strong>.</p>
   <h2>Demo</h2>
-  <p><a href="https://svelte.dev/repl/44cafd471bcf497080e12ed3bee80986" rel="nofollow">SVELTE REPL</a></p>
+  <p><a href="https://svelte.dev/repl/44cafd471bcf497080e12ed3bee80986?version=3" rel="nofollow">SVELTE REPL</a></p>
   <h2>Install</h2>
   <p><code>npm install @taocode/svelte-headroom</code></p>
   <h2>Usage</h2>
@@ -70,28 +68,28 @@
   <h2>Props</h2>
   <h3 id="tolerance"><code>tolerance</code> number</h3>
   <p>The number of pixels that need to be scrolled in either direction for the effect to occur. This is useful if you
-    want the user to be able to scroll slowly and not trigger . Default: <code>0</code>.</p>
+    want the user to be able to scroll slowly and not trigger un/pin event. Default: <code>0</code>.</p>
   <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto">
   <pre>
   <span class="pl-kos">&lt;</span><span class="pl-ent">Headroom</span> <span class="pl-c1">tolerance</span>=<span class="pl-s">&lbrace;10&rbrace;</span><span class="pl-kos">&gt;</span>
-    <span class="pl-c">&lt;!-- my header --&gt;</span>
+    <span class="pl-c">&lt;!-- will ignore any scroll less than 10px --&gt;</span>
   <span class="pl-kos">&lt;/</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span></pre>
   </div>
   <h3 id="offsetTop"><code>offsetTop</code> number</h3>
-  <p>The number of pixels from the top of the page before the effect is allowed to occur and is the threshold for class:atTop. Default: <code>2</code>.</p>
+  <p>The number of pixels from the top of the page before the effect is allowed to occur; <em>controls</em> `class:atTop` (used with hideAtTop, showAtTop) Default: <code>2</code>.</p>
   <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto">
   <pre>
   <span class="pl-kos">&lt;</span><span class="pl-ent">Headroom</span> <span class="pl-c1">offsetTop</span>=<span class="pl-s">&lbrace;50&rbrace;</span><span class="pl-kos">&gt;</span>
-    <span class="pl-c">&lt;!-- my header --&gt;</span>
+    <span class="pl-c">&lt;!-- will show until after 50px from top --&gt;</span>
   <span class="pl-kos">&lt;/</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span></pre>
   </div>
   <h3 id="offsetBottom"><code>offsetBottom</code> number</h3>
-  <p>The number of pixels from top to still be considered at the bottom (useful with hideAtTop, showAtTop, etc...).
+  <p>The number of pixels from top to still be considered at the bottom; <em>controls:</em> `class:atBottom` (used with hideAtBottom, showAtBottom).
     Default: <code>2</code>.</p>
   <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto">
     <pre>
-  <span class="pl-kos">&lt;</span><span class="pl-ent">Headroom</span> <span class="pl-c1">offsetBottom</span>=<span class="pl-s">&lbrace;5&rbrace;</span><span class="pl-kos">&gt;</span>
-    <span class="pl-c">&lt;!-- my header --&gt;</span>
+  <span class="pl-kos">&lt;</span><span class="pl-ent">Headroom</span> showAtBottom <span class="pl-c1">offsetBottom</span>=<span class="pl-s">&lbrace;150&rbrace;</span><span class="pl-kos">&gt;</span>
+    <span class="pl-c">&lt;!-- will show when within 150px of bottom --&gt;</span>
   <span class="pl-kos">&lt;/</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span></pre>
   </div>
   <h3 id="duration"><code>duration</code> string</h3>
@@ -101,7 +99,7 @@
   <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto">
     <pre>
   <span class="pl-kos">&lt;</span><span class="pl-ent">Headroom</span> <span class="pl-c1">duration</span>='<span class="pl-s">500ms</span>'<span class="pl-kos">&gt;</span>
-    <span class="pl-c">&lt;!-- my header --&gt;</span>
+    <span class="pl-c">&lt;!-- will take 500ms to transition --&gt;</span>
   <span class="pl-kos">&lt;/</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span></pre>
   </div>
 
@@ -112,7 +110,7 @@
   <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto">
     <pre>
   <span class="pl-kos">&lt;</span><span class="pl-ent">Headroom</span> <span class="pl-c1">easing</span>='<span class="pl-s">ease-out</span>'<span class="pl-kos">&gt;</span>
-    <span class="pl-c">&lt;!-- my header --&gt;</span>
+    <span class="pl-c">&lt;!-- will ease-out --&gt;</span>
   <span class="pl-kos">&lt;/</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span></pre>
   </div>
 
@@ -121,7 +119,7 @@
   <div class="highlight highlight-text-html-basic notranslate position-relative overflow-auto">
     <pre>
   <span class="pl-kos">&lt;</span><span class="pl-ent">Headroom</span> <span class="pl-c1">bottom</span><span class="pl-kos">&gt;</span>
-    <span class="pl-c">&lt;!-- my header --&gt;</span>
+    <span class="pl-c">&lt;!-- pinned to the bottom --&gt;</span>
   <span class="pl-kos">&lt;/</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span></pre>
   </div>
 
@@ -183,7 +181,13 @@
   }
   .topmenu .label {
     text-transform: uppercase;
+		transform: rotate(-45deg) scaleX(0.85) skewX(-20deg);
   }
+	@media screen and (min-width: 700px) {
+		.topmenu .label {
+			transform: rotate(0);
+		}
+	}
   
   .menu {
     display: flex;

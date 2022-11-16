@@ -8,9 +8,7 @@ Svelte Headroom is a [Svelte](https://svelte.dev) component to hide or show your
 
 ## Demo
 
-Demo URL coming soon or check the source.
-
-[Svelte REPL](https://svelte.dev/repl/44cafd471bcf497080e12ed3bee80986?version=3.53.1)
+[Svelte REPL](https://svelte.dev/repl/44cafd471bcf497080e12ed3bee80986?version=3.53.1) or check the source: `src/routes/+page.svelte`
 
 ## Install
 
@@ -31,18 +29,6 @@ Demo URL coming soon or check the source.
 
 ## Props
 
-### `offset` number
-
-The number of pixels from the top of the page before the effect is allowed to occur. Default: `0`.
-
-```html
-
-<Headroom offset={50}>
-  <!-- my header -->
-</Headroom>
-
-```
-
 ### `tolerance` number
 
 The number of pixels that need to be scrolled in either direction for the effect to occur. This is useful if you want the user to be able to scroll slowly and not change the header position. Default: `0`.
@@ -50,19 +36,30 @@ The number of pixels that need to be scrolled in either direction for the effect
 ```html
 
 <Headroom tolerance={10}>
-  <!-- my header -->
+  <!-- will ignore any scroll less than 10px -->
+</Headroom>
+
+```
+### `offsetTop` number
+
+The number of pixels from the top of the page before the effect is allowed to occur; *controls:* `class:atTop` (useful with hideAtTop, showAtTop). Default: `2`.
+
+```html
+
+<Headroom offsetTop={50}>
+  <!-- will show until after 50px from top -->
 </Headroom>
 
 ```
 
-### `shim` number
+### `offsetBottom` number
 
-The number of pixels from top or bottom to detect top or bottom status. If you're within this value of top or bottom, you'll be considered at top or bottom. Default: `2`.
+The number of pixels from bottom to be considered at the bottom; *controls* `class:atBottom` (useful with hideAtBottom, showAtBottom). Default: `2`.
 
 ```html
 
-<Headroom shim={5}>
-  <!-- my header -->
+<Headroom showAtBottom offsetBottom={150}>
+  <!-- will show when within 150px of bottom -->
 </Headroom>
 
 ```
@@ -74,7 +71,7 @@ The duration of the sliding effect. The value is passed on as a [CSS Transition 
 ```html
 
 <Headroom duration='500ms'>
-  <!-- my header -->
+  <!-- will take 500ms to transition -->
 </Headroom>
 
 ```
@@ -86,7 +83,7 @@ The timing function (easing) of the sliding effect. The value is passed on as a 
 ```html
 
 <Headroom easing='ease-out'>
-  <!-- my header -->
+  <!-- will ease-out -->
 </Headroom>
 
 ```
@@ -98,7 +95,7 @@ If this is to be pinned to the bottom, like a return to top button. Default: `fa
 ```html
 
 <Headroom bottom>
-  <!-- my header -->
+  <!-- pinned to the bottom -->
 </Headroom>
 
 ```
@@ -119,7 +116,7 @@ If this is to be pinned to the bottom, like a return to top button. Default: `fa
 
 ```
 
-# Events
+## Events
 
 A `svelte-headroom` component emits two events: `pin` and `unpin`.
 
