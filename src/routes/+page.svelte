@@ -62,7 +62,7 @@
   <span class="pl-kos">&lt;/</span><span class="pl-ent">script</span><span class="pl-kos">&gt;</span>
 
   <span class="pl-kos">&lt;</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span>
-    <span class="pl-c">&lt;!-- my header --&gt;</span>
+    <span class="pl-c">&lt;!-- Header will be fixed at top and auto show/hide based on scroll --&gt;</span>
   <span class="pl-kos">&lt;/</span><span class="pl-ent">Headroom</span><span class="pl-kos">&gt;</span></pre>
   </div>
   <h2>Props</h2>

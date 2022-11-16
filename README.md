@@ -22,7 +22,7 @@ Svelte Headroom is a [Svelte](https://svelte.dev) component to hide or show your
 </script>
 
 <Headroom>
-  <!-- Header will be fixed and auto show/hide based on scroll -->
+  <!-- Header will be fixed at top and auto show/hide based on scroll -->
 </Headroom>
 
 ```
