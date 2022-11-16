@@ -2,7 +2,7 @@
   import { Headroom } from '$lib'
 
   function onPin() {
-  console.log('pin')
+    console.log('pin')
   }
   function onUnPin() {
     console.log('unpin')
