@@ -10,8 +10,6 @@ const timingFunctions = [
 ]
 
 export default function validate({ duration, easing, tolerance, offsetTop, offsetBottom }) {
-  // if (typeof offset !== "number")
-  //   warn("The `offset` prop is not a number: ", offset)
   if (typeof tolerance !== "number")
     warn("The `tolerance` prop is not a number: ", tolerance)
   if (typeof offsetTop !== "number")
