@@ -9,7 +9,6 @@ specifiers:
   '@vcarl/remark-headings': ^0.1.0
   husky: ^8.0.2
   mdsvex: ^0.10.6
-  remark-heading-autoid: ^0.1.1
   remark-heading-id: ^1.0.0
   semantic-release: ^19.0.5
   svelte: ^3.53.1
@@ -27,7 +26,6 @@ devDependencies:
   '@vcarl/remark-headings': 0.1.0
   husky: 8.0.2
   mdsvex: 0.10.6_svelte@3.53.1
-  remark-heading-autoid: 0.1.1
   remark-heading-id: 1.0.0
   semantic-release: 19.0.5
   svelte: 3.53.1
@@ -2564,12 +2562,6 @@ packages:
       rc: 1.2.8
     dev: true
 
-  /remark-heading-autoid/0.1.1:
-    resolution: {integrity: sha512-t7w474Fzsax+CXcqivMGgmeibOPJiE+wbVNpnM3bPvJfadPUnWm7OvTQTqDJyqeLJji0we8odPdVjgFNJuABbw==}
-    dependencies:
-      unist-util-visit: 2.0.3
-    dev: true
-
   /remark-heading-id/1.0.0:
     resolution: {integrity: sha512-86QaOiL+8jTV9P5Y0S25kSIcykCd/XmnqiFltWZRWKHmsVT4sevN7QJnkpUjkCJUpIeWte/LYH7pVlCTGz89fw==}
     engines: {node: '>=8'}
@@ -3218,10 +3210,6 @@ packages:
     resolution: {integrity: sha512-sVZZX3+kspVNmLWBPAB6r+7D9ZgAFPNWm66f7YNb420RlQSbn+n8rG8dGZSkrER7ZIXGQYNm5pqC3v3HopH24A==}
     dev: true
 
-  /unist-util-is/4.1.0:
-    resolution: {integrity: sha512-ZOQSsnce92GrxSqlnEEseX0gi7GH9zTJZ0p9dtu87WRb/37mMPO2Ilx1s/t9vBHrFhbgweUwb+t7cIn5dxPhZg==}
-    dev: true
-
   /unist-util-is/5.1.1:
     resolution: {integrity: sha512-F5CZ68eYzuSvJjGhCLPL3cYx45IxkqXSetCcRgUXtbcm50X2L9oOWQlfUfDdAf+6Pd27YDblBfdtmsThXmwpbQ==}
     dev: true
@@ -3238,13 +3226,6 @@ packages:
       unist-util-is: 3.0.0
     dev: true
 
-  /unist-util-visit-parents/3.1.1:
-    resolution: {integrity: sha512-1KROIZWo6bcMrZEwiH2UrXDyalAa0uqzWCxCJj6lPOvTve2WkfgCytoDTPaMnodXh1WrXOq0haVYHj99ynJlsg==}
-    dependencies:
-      '@types/unist': 2.0.6
-      unist-util-is: 4.1.0
-    dev: true
-
   /unist-util-visit-parents/5.1.1:
     resolution: {integrity: sha512-gks4baapT/kNRaWxuGkl5BIhoanZo7sC/cUT/JToSRNL1dYoXRFl75d++NkjYk4TAu2uv2Px+l8guMajogeuiw==}
     dependencies:
@@ -3256,14 +3237,6 @@ packages:
     resolution: {integrity: sha512-AvGNk7Bb//EmJZyhtRUnNMEpId/AZ5Ph/KUpTI09WHQuDZHKovQ1oEv3mfmKpWKtoMzyMC4GLBm1Zy5k12fjIw==}
     dependencies:
       unist-util-visit-parents: 2.1.2
-    dev: true
-
-  /unist-util-visit/2.0.3:
-    resolution: {integrity: sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q==}
-    dependencies:
-      '@types/unist': 2.0.6
-      unist-util-is: 4.1.0
-      unist-util-visit-parents: 3.1.1
     dev: true
 
   /unist-util-visit/4.1.1:

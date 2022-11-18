@@ -19,7 +19,6 @@
     "@vcarl/remark-headings": "^0.1.0",
     "husky": "^8.0.2",
     "mdsvex": "^0.10.6",
-    "remark-heading-autoid": "^0.1.1",
     "remark-heading-id": "^1.0.0",
     "semantic-release": "^19.0.5",
     "svelte": "^3.53.1",
