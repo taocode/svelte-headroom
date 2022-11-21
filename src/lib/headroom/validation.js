@@ -9,9 +9,15 @@ const timingFunctions = [
   'cubic-bezier()'
 ]
 
-export default function validate({ duration, easing, tolerance, offsetTop, offsetBottom }) {
-  if (typeof tolerance !== "number")
+export default function validate({ duration, easing, tolerance, toleranceDown, toleranceUp, offset, offsetTop, offsetBottom }) {
+  if (typeof tolerance !== "number" )
     warn("The `tolerance` prop is not a number: ", tolerance)
+  if (typeof toleranceDown !== "number")
+    warn("The `toleranceDown` prop is not a number: ", toleranceDown)
+  if (typeof toleranceUp !== "number")
+    warn("The `toleranceUp` prop is not a number: ", toleranceUp)
+  if (typeof offset !== "number")
+    warn("The `offset` prop is not a number: ", offset)
   if (typeof offsetTop !== "number")
     warn("The `offsetTop` prop is not a number: ", offsetTop)
   if (typeof offsetBottom !== "number")

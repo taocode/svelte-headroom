@@ -41,7 +41,7 @@
 </Headroom>
 
 <div class="totop-wrap">
-  <Headroom bottom showAtBottom hideAtTop tolerance={20} offsetTop={100} offsetBottom={100}>
+  <Headroom bottom showAtBottom hideAtTop toleranceUp={20} offset={100}>
     <button class="totop" on:click={()=> window.scroll(0,0)}> <span class="caret">^</span> <span>To Top</span> </button>
   </Headroom>
 </div>
@@ -79,14 +79,14 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    max-width: 80ch;
-    padding: 0 0.35em;
+    max-width: 65ch;
   }
   .topmenu .label {
     text-transform: uppercase;
+    padding: 0 0.5rem;
 		transform: rotate(-45deg) scaleX(0.85) skewX(-20deg);
   }
-	@media screen and (min-width: 700px) {
+	@media screen and (min-width: 580px) {
 		.topmenu .label {
 			transform: rotate(0);
 		}
@@ -129,11 +129,12 @@
 
   .caret {
     font-size: 4em;
-    padding-top: 0.5rem;
+    padding-top: 0.6rem;
   }
 
   article {
     max-width: 70ch;
+    padding: 0 1.5ch;
     margin: 5em auto;
     line-height: 1.8;
   }
