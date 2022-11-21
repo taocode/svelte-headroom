@@ -1,6 +1,6 @@
 <script>
   import { Headroom } from '$lib'
-  import Readme from '../../README.md'
+  import Readme from '../_README.md'
 
   export let data
   let headings = data.headings

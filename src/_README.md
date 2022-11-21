@@ -31,7 +31,7 @@ Svelte Headroom is a [Svelte](https://svelte.dev) component to hide or show your
 
 ## Props
 
-### `tolerance` number
+### `tolerance` number {#tolerance}
 
 The number of pixels that need to be scrolled in either direction for the effect to occur. This is useful if you want the user to be able to scroll slowly and not change the header position. Default: `0`.
 
@@ -42,7 +42,7 @@ The number of pixels that need to be scrolled in either direction for the effect
 </Headroom>
 
 ```
-### `offsetTop` number
+### `offsetTop` number {#offsetTop}
 
 The number of pixels from the top of the page before the effect is allowed to occur; *controls:* `class:atTop` (useful with hideAtTop, showAtTop). Default: `2`.
 
@@ -54,7 +54,7 @@ The number of pixels from the top of the page before the effect is allowed to oc
 
 ```
 
-### `offsetBottom` number
+### `offsetBottom` number {#offsetBottom}
 
 The number of pixels from bottom to be considered at the bottom; *controls* `class:atBottom` (useful with hideAtBottom, showAtBottom). Default: `2`.
 
@@ -66,7 +66,7 @@ The number of pixels from bottom to be considered at the bottom; *controls* `cla
 
 ```
 
-### `duration` string
+### `duration` string {#duration}
 
 The duration of the sliding effect. The value is passed on as a [CSS Transition Duration](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration). Default: `"300ms"`.
 
@@ -78,7 +78,7 @@ The duration of the sliding effect. The value is passed on as a [CSS Transition 
 
 ```
 
-### `easing` string
+### `easing` string {#easing}
 
 The timing function (easing) of the sliding effect. The value is passed on as a [CSS Transition Timing Function](https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function). Default: `"linear"`.
 
@@ -90,7 +90,7 @@ The timing function (easing) of the sliding effect. The value is passed on as a 
 
 ```
 
-### `bottom` boolean
+### `bottom` boolean {#bottom}
 
 If this is to be pinned to the bottom, like a return to top button. Default: `false`.
 
@@ -108,7 +108,7 @@ You can play with heights and widths and different positioning; *see below for m
 
 ```
 
-### `(show|hide)At(Top|Bottom)` boolean
+### `(show|hide)At(Top|Bottom)` boolean {#ats}
 
 If this is to be pinned to the bottom, like a return to top button. Default: `false`.
 
@@ -174,4 +174,4 @@ A `svelte-headroom` component emits two events: `pin` and `unpin`.
 </Headroom>
 ```
 
-## Happy Coding!
+## Happy Coding! {#happy}

@@ -3,7 +3,9 @@
   "version": "1.0.0-beta",
   "scripts": {
     "dev": "vite dev",
-    "build": "svelte-kit sync && svelte-package",
+    "build": "npm-run-all build:*",
+    "build:readme": "node ./src/_readmecleancp.js",
+    "build:sveltekit": "svelte-kit sync && svelte-package",
     "prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
@@ -19,6 +21,7 @@
     "@vcarl/remark-headings": "^0.1.0",
     "husky": "^8.0.2",
     "mdsvex": "^0.10.6",
+    "npm-run-all": "^4.1.5",
     "remark-heading-id": "^1.0.0",
     "semantic-release": "^19.0.5",
     "svelte": "^3.53.1",
