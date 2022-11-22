@@ -41,14 +41,17 @@
 </Headroom>
 
 <div class="totop-wrap">
-  <Headroom bottom showAtBottom hideAtTop toleranceUp={20} offset={100}>
+  <Headroom bottom showAtBottom hideAtTop toleranceUp={20} offsetTop={500} offsetBottom={100}>
     <button class="totop" on:click={()=> window.scroll(0,0)}> <span class="caret">^</span> <span>To Top</span> </button>
   </Headroom>
 </div>
 
 <article class="markdown-body entry-content container-lg" itemprop="text">
+
   <Readme />
+
 </article>
+
 </div>
 
 <style>
