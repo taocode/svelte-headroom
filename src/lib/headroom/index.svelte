@@ -41,8 +41,8 @@
 		const up = scrolled > 0
 		if (!scrolled 
 			 || (
-					up && scrolled < toleranceUp 
-					|| Math.abs(scrolled) < toleranceDown
+				 	! up && Math.abs(scrolled) < toleranceDown
+					|| up && scrolled < toleranceUp 
 					)
 				) return headerClass
 		return (up) ? 'pin' : 'unpin'
