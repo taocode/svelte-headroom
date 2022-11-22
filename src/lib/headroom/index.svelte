@@ -15,9 +15,9 @@
 	export let hideAtTop = false
 	export let showAtBottom = false
 	export let showAtTop = false
-
-	let headerClass = 'pin'
-	let lastHeaderClass = 'pin'
+	
+	let headerClass = bottom ? 'unpin' : 'pin'
+	let lastHeaderClass = headerClass
 	let y = 0
 	let lastY = 0
 	let atTop = true
