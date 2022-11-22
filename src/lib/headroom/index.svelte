@@ -22,7 +22,6 @@
 	let lastY = 0
 	let atTop = true
 	let atBottom = false
-	let style = `--duration:${duration}; --easing:${easing};`
 
 	validate({ duration, easing, tolerance, toleranceDown, toleranceUp, offset, offsetTop, offsetBottom })
 
@@ -37,7 +36,7 @@
 	})
 
 	function deriveClass(y = 0, scrolled = 0) {
-		if (y < offsetTop) return 'pin'
+		if (y < offsetTop) return headerClass
 		const up = scrolled > 0
 		if (!scrolled 
 			 || (
@@ -55,6 +54,14 @@
 		return result
 	}
 
+	/**
+   * @param {HTMLDivElement} node
+   */
+	function transitionSettings(node) {
+		node.style.transitionDuration = duration
+		node.style.transitionTimingFunction = easing
+	}
+
 	$: {
 		headerClass = updateClass(y)
 		atTop = y <= offsetTop
@@ -67,7 +74,7 @@
 </script>
 <svelte:window bind:scrollY={y} />
 <div
-	{style}
+	use:transitionSettings
 	class={headerClass}
 	class:bottom
 	class:atTop
@@ -78,6 +85,7 @@
 	class:hideAtBottom
 >
 	<slot />
+
 </div>
 
 <style>
@@ -85,7 +93,7 @@
 		position: fixed;
 		width: 100%;
 		top: 0;
-		transition: transform var(--duration, 300ms) var(--easing, linear);
+		transition: transform 300ms linear;
 	}
 	.bottom {
 		top: auto;
